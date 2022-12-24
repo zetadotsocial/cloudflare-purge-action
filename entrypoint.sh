@@ -90,16 +90,6 @@ for BATCH in $PURGE_URLS; do
   # Fail pipeline and print errors if API doesn't return an OK status.
   if [ "${HTTP_STATUS}" -eq "200" ]; then
     echo "Successfully purged!"
-    exit 0
-  else
-    echo "Purge failed. API response was: "
-    echo "${HTTP_BODY}"
-    exit 1
-  fi
-
-  # Fail pipeline and print errors if API doesn't return an OK status.
-  if [ "${HTTP_STATUS}" -eq "200" ]; then
-    echo "Successfully purged!"
   else
     echo "Purge failed. API response was: "
     echo "${HTTP_BODY}"
